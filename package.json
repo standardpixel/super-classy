@@ -4,7 +4,7 @@
   "description": "A JS base class with embedded utilities. Intended for projects where one would rather not have to rely on jquery or _",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
