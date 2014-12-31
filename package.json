@@ -1,6 +1,6 @@
 {
   "name": "super-classy",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A JS base class with embedded utilities. Intended for projects where one would rather not have to rely on jquery or _",
   "main": "index.js",
   "scripts": {
