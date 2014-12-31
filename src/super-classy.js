@@ -1,3 +1,7 @@
+//
+// SuperClassy - A simple base-class for server and client
+//
+
 module.exports = function SuperClassy() {
 
   "use strict";
