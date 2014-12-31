@@ -1,10 +1,21 @@
-module.exports = function SuperClassy() {
+module.exports = function SuperClassy(options) {
 
   "use strict";
 
   var that = this;
 
   var listeners = {};
+
+  var win;
+
+  //
+  // Mainly in place for unit testing
+  //
+  if (options && options.window) {
+    win = options.window;
+  } else if(typeof window !== 'undefined') {
+    win = window;
+  }
 
   //
   // Subscribes a function to an event called by fire
@@ -69,7 +80,7 @@ module.exports = function SuperClassy() {
       // Gets an element by selector. Uses JQuery if available.
       //
       get : function get(selector, root) {
-        return ((root) ? root : document).querySelectorAll(selector);
+        return ((root) ? root : win.document).querySelectorAll(selector);
       },
 
       //Lifted from http://davidwalsh.name/javascript-debounce-function
@@ -130,7 +141,7 @@ module.exports = function SuperClassy() {
       },
 
     append : function(rootNode, html) {
-      var div = document.createElement("div");
+      var div = win.document.createElement("div");
       div.innerHTML = html;
       while (div.children.length > 0) {
         rootNode.appendChild(div.children[0]);
